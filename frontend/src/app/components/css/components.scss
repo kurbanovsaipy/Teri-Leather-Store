@@ -175,6 +175,59 @@ header {
         display: none;
     }
 }
+/*----------Catalog menu-----------*/
+.catalog_menu{
+    height: 100%;
+    width: 100%;
+    margin-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h2{
+        font-size: 28px;
+        color: $orange;
+    }
+    .catalog_menu_tabs{
+        flex: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+        & a{
+            position: relative;
+            display: block;
+            color: #fff;
+            font-size: 18px;
+            transition: 0.3s;
+            &::before{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: '';
+                width: 0;
+                height: 2px;
+                background-color: $orange;
+                transition: 0.3s;
+            }
+            &.active{
+                color: $orange;
+                &::before{
+                    width: 100%;
+                }
+            }
+            &:hover{
+                color: $orange;
+                &:before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
 /*----------Profile_menu-----------*/   
 .profile_menu_tabs{
     display: flex;

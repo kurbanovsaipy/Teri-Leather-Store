@@ -8,7 +8,9 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react'
 
 export default function BasketExec() {
+
     const isAuth = false
+
     const [deliveryOptions, setDeliveryOptions] = useState()
 
     return (
@@ -113,8 +115,21 @@ export default function BasketExec() {
                         </div>
 
                     </div>
-                    <label htmlFor="" className="form_label">Введите адрес</label>
-                    <input type="text" className="form_input" />
+                    {deliveryOptions == 'pickup' && 
+                    <div className=''>
+                        
+                    </div>}
+                    {deliveryOptions == 'post' && 
+                    <div className=''>
+                        <label htmlFor="" className="form_label">Введите адрес доставки</label>
+                        <input type="text" className="form_input" />
+                    </div>}
+                    {deliveryOptions == 'courier' && 
+                    <div className=''>
+                        <label htmlFor="" className="form_label">Введите адрес доставки</label>
+                        <input type="text" className="form_input" />
+                    </div>}
+                    
                 </div>
             </form>
             
