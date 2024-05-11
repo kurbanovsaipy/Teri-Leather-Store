@@ -57,7 +57,7 @@ export default function BasketExec() {
 
                     <h2 className='order_title'>Персональная ифнормация</h2>
 
-                    <label htmlFor="" className="form_label">Ф.И.О Кнов</label>
+                    <label htmlFor="" className="form_label">Ф.И.О Кнhhjfhjов</label>
                     <p>Курбанов Салим Ильясович</p>
 
                     <label htmlFor="" className="form_label">Адрес эл. почты</label>
