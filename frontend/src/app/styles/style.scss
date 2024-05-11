@@ -310,11 +310,12 @@ input:-webkit-autofill:focus {
     display: block;
     padding: 10px 40px;
     width: max-content;
-    color: #fff;
-    font-size: 14px;
+    color: #131313;
+    font-weight: 600;
+    font-size: 16px;
     position: relative;
     transition: 1s;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $orange;
     border-right: 0;
     &.remove {
       animation: backSlice 0.5s forwards ease;

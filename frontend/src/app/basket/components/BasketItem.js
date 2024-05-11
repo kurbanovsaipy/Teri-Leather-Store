@@ -59,7 +59,17 @@ export default function BasketItem({product}) {
     }
 
     function removeBasketItem(id) {
-        document.getElementById(id).remove()
+        const item = document.getElementById(id)
+        item.classList.add('red')
+        setTimeout(() => {
+            item.classList.add('remove')
+        }, 500)
+        setTimeout(() => {
+            item.classList.add('height')
+        }, 1300)
+        setTimeout(() => {
+            item.remove()
+        }, 2500)
         Basket.remove(id)
         Store.setListener('count', Basket.count())
         Store.setListener('total_price', Basket.totalPrice())
@@ -88,7 +98,7 @@ export default function BasketItem({product}) {
                     </div>}
                 </div>
             </Link>
-            
+           
             <div className="content description">
                 <Link href={`/catalog/detail/${product.slug}`} className="title">{product.categories} {product.title}</Link>
                 <p className="color">{product.product_color} <span style={{'background': `${product.color}`}}></span></p>
@@ -101,6 +111,7 @@ export default function BasketItem({product}) {
                     <p className="price">{(product.total_price * count).toFixed(2)} ₽</p>
                 </div>
             </div>
+            <div className="margin_btm"></div>
         </div>
     );
 }
