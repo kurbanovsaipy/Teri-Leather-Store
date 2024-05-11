@@ -20,7 +20,7 @@ export default function BasketExec() {
                 <div className='personal_data'>
                     <h2 className='order_title'>Персональная ифнормация</h2>
 
-                    <label htmlFor="" className='form_label'>Адрес эл. почты fdfdf</label>
+                    <label htmlFor="" className='form_label'>Адрес эл. почты</label>
 
                     <input type="text" className='form_input'/>
 
