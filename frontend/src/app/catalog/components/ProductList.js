@@ -54,8 +54,8 @@ export default async function ProductList({category}) {
                             </div>
                             <Link href={`/catalog/detail/${el.slug}`} className={"card_title"}>{el.categories} / {el.title}</Link>
                             {el.discount > 0 && <p className='card_old_price'>{el.price} ₽</p>}
-                            <p className='card_price'>{el.total_price} ₽</p>
-                            <BasketAddBtn id={el.id} price={el.total_price}/>
+                            <p className='card_price'>{(el.total_price).toFixed(2)} ₽</p>
+                            <BasketAddBtn id={el.id} price={(el.total_price).toFixed(2)}/>
                         </div>
                     </div>
                 ))}

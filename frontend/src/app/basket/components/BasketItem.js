@@ -97,8 +97,8 @@ export default function BasketItem({product}) {
             <div className="content">
                 <button className="main_button cross" onClick={(e) => removeBasketItem(product.id)}>X</button>
                 <div className="">
-                    {product.discount > 0 && <p className="old_price">{product.price * count} ₽</p>}
-                    <p className="price">{product.total_price * count} ₽</p>
+                    {product.discount > 0 && <p className="old_price">{(product.price * count).toFixed(2)} ₽</p>}
+                    <p className="price">{(product.total_price * count).toFixed(2)} ₽</p>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import Api from '@/Api/Api'
 import BasketAddBtn from '@/app/components/BasketAddBtn'
 import SimilarList from '../../components/SimilarList'
 import ViewsList from '../../components/ViewsList'
+import ImagePopUp from '../../components/ImagepopUp'
 
 async function getProductDetail(slug) {
 
@@ -40,15 +41,16 @@ export default async function productDetail({params}) {
                     </div>
                     <div>
                         {product.discount > 0 && <p className="old_price">{product.price} ₽</p>}
-                        <p className="price">{product.total_price} ₽</p>
+                        <p className="price">{(product.total_price).toFixed(2)} ₽</p>
                     </div>
-                    <BasketAddBtn id={product.id} price={product.total_price}/>
+                    <BasketAddBtn id={product.id} price={(product.total_price).toFixed(2)}/>
                     <p>{product.descriprion}</p>
                 </div>
             </div>
 
             <SimilarList id={product.id}/>
             <ViewsList id={product.id} />
+            <ImagePopUp image={product.Image1}/>
         </div>
     );
 }

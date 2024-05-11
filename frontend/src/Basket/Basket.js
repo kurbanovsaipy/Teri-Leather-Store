@@ -94,7 +94,7 @@ Basket.totalPrice = () => {
         total_price += i.price * i.count
     }
 
-    return total_price
+    return total_price.toFixed(2)
 }
 
 export default Basket;
