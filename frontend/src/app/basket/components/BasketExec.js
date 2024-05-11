@@ -11,7 +11,7 @@ export default function BasketExec() {
 
     const isAuth = false
 
-    const [deliveryOptions, setDeliveryOptions] = useState()
+    const [deliveryOptions, setDeliveryOptions] = useState('')
 
     return (
         <div className="basket_execution">
@@ -115,20 +115,34 @@ export default function BasketExec() {
                         </div>
 
                     </div>
+
                     {deliveryOptions == 'pickup' && 
-                    <div className=''>
-                        
+                    <div className='option_description'>
+                        <p>Вы можете забрать товар в любой удобный для вас день с 9:00 до 18:00 МСК.</p>
+                        <h3>Адрес нашего магазина:</h3>
+                        <p className='addres'>Республика Крым, г. Симферополь, мк. р-н Фонтаны, ул. Темиз, 16</p>
                     </div>}
+
                     {deliveryOptions == 'post' && 
-                    <div className=''>
-                        <label htmlFor="" className="form_label">Введите адрес доставки</label>
+                    <div className='option_description'>
+                        <p>Укажите адрес для доставки товара через Почту России.</p>
+                        <p>Стоимость дставки в пределах респ. Крым - от 200 р. Стоимость дставки по России - от 300 р.</p> 
+                        <label htmlFor="" className="form_label">Введите адрес</label>
                         <input type="text" className="form_input" />
                     </div>}
+
                     {deliveryOptions == 'courier' && 
-                    <div className=''>
-                        <label htmlFor="" className="form_label">Введите адрес доставки</label>
+                    <div className='option_description'>
+                        <p>Доставка курьером осуществляется в день или на следующий день после заказа</p>
+                        <p>Стоимость доставки по г. Симферополь от 300 руб. и от 400 руб. по Крыму </p>
+                        <label htmlFor="" className="form_label">Введите адрес</label>
                         <input type="text" className="form_input" />
                     </div>}
+
+                </div>
+                <div className="payment_block">
+                    <h2 className="order_title">Оплата</h2>
+                    <label htmlFor="" className="form_label">Выберите способ оплаты</label>
                     
                 </div>
             </form>
