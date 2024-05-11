@@ -429,19 +429,6 @@
                         color: $orange;
                     }
                 }
-                .old_price {
-                    width: 100%;
-                    text-align: center;
-                    @include adaptiveFont(16, 13);
-                    color: grey;
-                    text-decoration: line-through; 
-                }
-                .price {
-                    text-align: center;
-                    @include adaptiveFont(18, 15);
-                    color: white;
-                    font-weight: 800;
-                }
             }
             .splide__arrow {
                 display: block;
@@ -463,21 +450,50 @@
     }
     .image_popup {
         position: fixed;
-        top:0;
+        top:-100%;
         left:0;
         width: 100%;
         height: 100dvh;
         background-color: rgba($color: #000000, $alpha: 0.7);
         z-index: 200;
-        display: none;
-        padding: 50px;
+        display: flex;
+        padding: 0 50px;    
         .main_splider {
-            flex: 4;
             min-width: 300px;
         }
-        .vertical_splider {
-            min-width: 200px;
-            flex: 1;
+        .vertical_splider{
+            height: 100%;
+            padding-top: 50px;
+            .splide__slide {
+                position: relative;
+                width: 120px;
+                & img {
+                    width: 100%;
+                }
+                &.is-active {
+                    border: 2px solid $orange;
+                }
+            }
+        }
+        .main_splider{
+            width: 100%;
+            height: 100%;
+            .splide__slide {
+                position: relative;
+                width: 100%;
+                height: 100dvh;
+                display: block;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 30%;
+                }
+                &.is-active {
+                    border: 0;
+                }
+            }
         }
     }
 }
