@@ -328,7 +328,6 @@
                 }
                 .option_description{
                     width: 100%;
-                    animation: optionAppear 0.8s;
                     & p{
                         position: relative;
                         font-size: 14px;
@@ -365,7 +364,7 @@
     @keyframes textAppearNoOp {
         from {
             opacity: 0;
-            transform: translateY(100%);
+            transform: translateY(20px);
         }
         to{
             transform: translateY(0);
@@ -375,7 +374,7 @@
     @keyframes textAppear {
         from {
             opacity: 0;
-            transform: translateY(100%);
+            transform: translateY(20px);
         }
         to{
             transform: translateY(0);
